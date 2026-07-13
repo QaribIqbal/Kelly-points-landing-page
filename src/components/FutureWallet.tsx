@@ -5,7 +5,7 @@ import Reveal from "./Reveal";
 function GalaxyPhone() {
   return (
     <div
-      className="animate-float-slow relative w-60 sm:w-64"
+      className="animate-float-slow relative w-44 sm:w-52 lg:w-56"
       style={{ "--float-rot": "0deg" } as React.CSSProperties}
     >
       <Image
@@ -13,7 +13,7 @@ function GalaxyPhone() {
         alt="Android phone showing the Xelly wallet auto-picking the Xelly Orange card with 30% off at Bella's Pizza, ready for tap-to-pay"
         width={234}
         height={649}
-        className="w-full drop-shadow-2xl"
+        className="h-auto w-full drop-shadow-2xl"
       />
     </div>
   );
