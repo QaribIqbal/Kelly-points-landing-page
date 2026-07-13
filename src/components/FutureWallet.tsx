@@ -9,10 +9,10 @@ function GalaxyPhone() {
       style={{ "--float-rot": "0deg" } as React.CSSProperties}
     >
       <Image
-        src="/xelly-phone.png"
+        src="/xelly-phone-clean.png"
         alt="Android phone showing the Xelly wallet auto-picking the Xelly Orange card with 30% off at Bella's Pizza, ready for tap-to-pay"
-        width={234}
-        height={649}
+        width={887}
+        height={1774}
         className="h-auto w-full drop-shadow-2xl"
       />
     </div>
