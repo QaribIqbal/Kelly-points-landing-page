@@ -11,8 +11,8 @@ function GalaxyPhone() {
       <Image
         src="/xelly-phone-clean.png"
         alt="Android phone showing the Xelly wallet auto-picking the Xelly Orange card with 30% off at Bella's Pizza, ready for tap-to-pay"
-        width={887}
-        height={1774}
+        width={848}
+        height={1855}
         className="h-auto w-full drop-shadow-2xl"
       />
     </div>
