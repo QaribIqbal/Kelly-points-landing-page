@@ -22,6 +22,7 @@ export default function Footer() {
           <Link href="/privacy" className={linkClass}>Privacy</Link>
           <Link href="/terms" className={linkClass}>Terms</Link>
           <Link href="/cookies" className={linkClass}>Cookies</Link>
+          <Link href="/support" className={linkClass}>Support</Link>
           <CookieSettingsButton className={linkClass} />
           {CONTACT_EMAIL && (
             <a href={`mailto:${CONTACT_EMAIL}`} className={linkClass}>Contact</a>
