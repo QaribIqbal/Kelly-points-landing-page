@@ -1,21 +1,36 @@
+import Image from "next/image";
+import Link from "next/link";
+import mark from "@/assets/xally-mark.png";
+import { CONTACT_EMAIL } from "@/lib/site";
+import CookieSettingsButton from "./CookieSettingsButton";
+
+const linkClass =
+  "flex min-h-11 items-center rounded-lg px-1 text-sm text-secondary transition-colors hover:text-foreground";
+
 export default function Footer() {
   return (
-    <footer className="bg-xblue-deep py-12 text-white">
-      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-6 sm:flex-row">
-        <div className="flex items-center gap-2">
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-xorange to-amber-500 font-display font-bold text-white">
-            X
+    <footer className="border-t border-separator/60 bg-white py-10">
+      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-5 sm:px-6 md:flex-row">
+        <div className="flex items-center gap-2.5">
+          <Image src={mark} alt="" height={22} className="h-[22px] w-auto" />
+          <span className="text-base font-semibold tracking-tight">
+            xally <span className="text-coral-deep">points</span>
           </span>
-          <span className="font-display text-lg font-bold">Xelly Points</span>
         </div>
-        <p className="text-sm font-semibold text-white/60">
-          © {new Date().getFullYear()} Xelly Points. Making wallets happier, one tap at a time.
+
+        <nav aria-label="Footer" className="flex flex-wrap items-center justify-center gap-x-5">
+          <Link href="/privacy" className={linkClass}>Privacy</Link>
+          <Link href="/terms" className={linkClass}>Terms</Link>
+          <Link href="/cookies" className={linkClass}>Cookies</Link>
+          <CookieSettingsButton className={linkClass} />
+          {CONTACT_EMAIL && (
+            <a href={`mailto:${CONTACT_EMAIL}`} className={linkClass}>Contact</a>
+          )}
+        </nav>
+
+        <p className="text-center text-sm text-secondary">
+          © {new Date().getFullYear()} Xally Points. Making wallets happier, one tap at a time.
         </p>
-        <div className="flex gap-6 text-sm font-bold text-white/70">
-          <a href="#" className="transition-colors hover:text-xorange-soft">Privacy</a>
-          <a href="#" className="transition-colors hover:text-xorange-soft">Terms</a>
-          <a href="#" className="transition-colors hover:text-xorange-soft">Contact</a>
-        </div>
       </div>
     </footer>
   );

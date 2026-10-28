@@ -30,19 +30,24 @@ const categories: { label: string; icon: LucideIcon }[] = [
 ];
 
 export default function CategoryMarquee() {
-  const row = [...categories, ...categories];
   return (
-    <section className="relative overflow-hidden border-y-4 border-xblue/10 bg-xblue py-5">
-      <div className="animate-marquee flex w-max gap-4">
-        {row.map((cat, i) => (
-          <span
-            key={i}
-            className="flex items-center gap-2.5 whitespace-nowrap rounded-full bg-white/10 px-6 py-2 font-display text-lg font-semibold text-white backdrop-blur-sm"
-          >
-            <cat.icon className="h-5 w-5 text-xorange-soft" strokeWidth={2.25} aria-hidden />
-            {cat.label}
-          </span>
-        ))}
+    <section
+      aria-label="Offer categories"
+      className="marquee relative overflow-hidden border-y border-separator/60 bg-white py-5"
+    >
+      <div className="animate-marquee flex w-max gap-3">
+        {[0, 1].map((copy) =>
+          categories.map((cat) => (
+            <span
+              key={`${copy}-${cat.label}`}
+              aria-hidden={copy === 1}
+              className="flex items-center gap-2.5 whitespace-nowrap rounded-full bg-grouped px-5 py-2.5 text-[15px] font-medium text-foreground"
+            >
+              <cat.icon className="h-5 w-5 text-coral-deep" strokeWidth={2} aria-hidden />
+              {cat.label}
+            </span>
+          )),
+        )}
       </div>
     </section>
   );
